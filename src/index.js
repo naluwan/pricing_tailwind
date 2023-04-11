@@ -3,6 +3,7 @@ import './index.css';
 const loginBtn = document.querySelector('#login');
 const closeBtn = document.querySelector('#close');
 const modal = document.querySelector('#modal');
+const loginContainer = document.querySelector('#loginContainer');
 
 // 登入按鈕點擊事件，點擊後顯示登入彈窗
 loginBtn.addEventListener('click', () => {
@@ -12,6 +13,13 @@ loginBtn.addEventListener('click', () => {
 // 關閉按鈕點擊事件，點擊後關閉登入彈窗
 closeBtn.addEventListener('click', () => {
   modal.classList.add('opacity-0', 'pointer-events-none');
+});
+
+// 點選背景可以關閉登入彈窗
+modal.addEventListener('mousedown', (e) => {
+  if (!loginContainer.contains(e.target)) {
+    modal.classList.add('opacity-0', 'pointer-events-none');
+  }
 });
 
 // 渲染清單

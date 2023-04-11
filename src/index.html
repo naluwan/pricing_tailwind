@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NaLuWan TailwindCSS 練習</title>
   </head>
-  <body class="relative bg-[#e5e5e5]">
+  <body class="relative bg-[#e5e5e5] lg:h-screen">
     <div class="p-4 lg:p-8">
       <!-- header -->
       <div class="flex items-start justify-between lg:mx-auto lg:max-w-[1280px]">
@@ -94,16 +94,62 @@
     <!-- modal -->
     <div
       id="modal"
-      class="pointer-events-none absolute left-0 right-0 top-0 flex h-full w-full items-start justify-center bg-black/70 opacity-0 duration-300"
+      class="pointer-events-none absolute left-0 right-0 top-0 flex h-full w-full items-start justify-center bg-black/70 opacity-0 duration-300 lg:items-center"
     >
-      <div class="mt-[150px] w-[90%] rounded-lg bg-white p-4">
-        <p>標題</p>
-        <p>內容</p>
+      <div
+        id="loginContainer"
+        class="mt-[150px] w-[90%] rounded-lg bg-white p-4 lg:mt-0 lg:w-[500px]"
+      >
+        <p class="my-4 text-center text-3xl font-medium">登入</p>
+        <div class="mb-8">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="mt-1 h-[50px] w-full rounded-lg border-2 border-gray-300 px-3 focus:border-primary focus:ring-primary"
+          />
+        </div>
+
+        <div class="mb-8">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="mt-1 h-[50px] w-full rounded-lg border-2 border-gray-300 px-3 focus:border-primary focus:ring-primary"
+          />
+        </div>
+
+        <div class="mb-8">
+          <label for="region">Region</label>
+          <select
+            type="text"
+            id="region"
+            name="region"
+            class="mt-1 h-[50px] w-full rounded-lg border-2 border-gray-300 px-3 focus:border-primary focus:ring-primary"
+          >
+            <option value="TW">台灣</option>
+            <option value="American">美國</option>
+            <option value="China">中國</option>
+          </select>
+        </div>
+
+        <div class="mb-8 flex items-center">
+          <input
+            type="checkbox"
+            id="checkbox"
+            name="checkbox"
+            class="mr-2 text-primary focus:ring-primary"
+          />
+          <label for="checkbox">記住帳號</label>
+        </div>
+
         <button
           id="close"
           class="mt-4 w-full rounded-lg bg-primary py-3 text-lg tracking-wide text-white"
         >
-          關閉
+          登入
         </button>
       </div>
     </div>

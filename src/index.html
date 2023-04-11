@@ -6,100 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NaLuWan TailwindCSS 練習</title>
   </head>
-  <body class="bg-[#e5e5e5]"></body>
-  <div class="h-screen p-4 lg:p-8">
-    <!-- header -->
-    <div class="flex items-start justify-between lg:mx-auto lg:max-w-[1280px]">
-      <div>
-        <h1 class="text-4xl tracking-wide text-gray-800">即日開啟</h1>
-        <p class="text-4xl tracking-wide text-gray-800">
-          您的<span class="font-bold text-black">免費方案</span>
-        </p>
+  <body class="relative bg-[#e5e5e5]">
+    <div class="p-4 lg:p-8">
+      <!-- header -->
+      <div class="flex items-start justify-between lg:mx-auto lg:max-w-[1280px]">
+        <div>
+          <h1 class="text-4xl tracking-wide text-gray-800">即日開啟</h1>
+          <p class="text-4xl tracking-wide text-gray-800">
+            您的<span class="font-bold text-black">免費方案</span>
+          </p>
+        </div>
+        <button
+          id="login"
+          class="rounded-full bg-primary px-4 py-2 tracking-widest text-white ring-primary ring-offset-2 duration-100 active:bg-primary-dark active:ring-4"
+        >
+          登入
+        </button>
       </div>
-      <button
-        id="login"
-        class="rounded-full bg-primary px-4 py-2 tracking-widest text-white ring-primary ring-offset-2 duration-100 active:bg-primary-dark active:ring-4"
+
+      <!-- main -->
+      <div
+        class="mt-8 lg:mx-auto lg:grid lg:max-w-[1280px] lg:grid-cols-3 lg:justify-evenly lg:gap-8"
       >
-        登入
-      </button>
+        <!-- cards -->
+        <!-- card 1 -->
+        <div
+          class="mt-8 w-full rounded-2xl bg-secondary p-8 shadow-2xl duration-300 hover:scale-105"
+        >
+          <p class="text-3xl font-bold">
+            免費方案 $0
+            <span class="text-base font-medium text-gray-600"> / 月 </span>
+          </p>
+          <div class="mt-4 h-[3px] w-[30px] bg-primary"></div>
+          <p class="mt-8 text-lg font-bold">方案內容:</p>
+
+          <ul class="mb-20 text-lg" id="list1"></ul>
+
+          <a href="#" class="mb-8 block w-full text-center font-bold">查看完整方案內容</a>
+
+          <button class="w-full rounded-lg bg-primary py-3 text-lg tracking-wide text-white">
+            訂閱方案
+          </button>
+        </div>
+
+        <!-- card 2 -->
+        <div class="mt-8 w-full rounded-2xl bg-primary p-8 shadow-2xl duration-300 hover:scale-105">
+          <p class="text-3xl font-bold text-white">
+            標準方案 $20
+            <span class="text-base font-medium"> / 月 </span>
+          </p>
+          <div class="mt-4 h-[3px] w-[30px] bg-white"></div>
+          <p class="mt-8 text-lg font-bold text-white">方案內容:</p>
+
+          <ul class="mb-20 text-lg text-white" id="list2"></ul>
+
+          <a href="#" class="mb-8 block w-full text-center font-bold text-white"
+            >查看完整方案內容</a
+          >
+
+          <button class="w-full rounded-lg bg-white py-3 text-lg tracking-wide text-black">
+            訂閱方案
+          </button>
+        </div>
+
+        <!-- card 3 -->
+        <div
+          class="mt-8 w-full rounded-2xl bg-secondary p-8 shadow-2xl duration-300 hover:scale-105"
+        >
+          <p class="text-3xl font-bold">
+            高級方案 $60
+            <span class="text-base font-medium text-gray-600"> / 月 </span>
+          </p>
+          <div class="mt-4 h-[3px] w-[30px] bg-primary"></div>
+          <p class="mt-8 text-lg font-bold">方案內容:</p>
+
+          <ul class="mb-20 text-lg" id="list3"></ul>
+
+          <a href="#" class="mb-8 block w-full text-center font-bold">查看完整方案內容</a>
+
+          <button class="w-full rounded-lg bg-primary py-3 text-lg tracking-wide text-white">
+            訂閱方案
+          </button>
+        </div>
+      </div>
     </div>
 
-    <!-- main -->
-
-    <div class="mt-8">
-      <!-- card -->
-      <div class="mt-8 w-full rounded-2xl bg-secondary p-8">
-        <p class="text-3xl font-bold">
-          免費方案 $0
-          <span class="text-base font-medium text-gray-600"> / 月 </span>
-        </p>
-        <div class="mt-4 h-[3px] w-[30px] bg-primary"></div>
-        <p class="mt-8 text-lg font-bold">方案內容:</p>
-
-        <ul class="mb-20 text-lg" id="list1">
-          <li class="mt-6 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-4 h-6 w-6 stroke-current text-primary"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-              />
-            </svg>
-            一般會員
-          </li>
-          <li class="mt-6 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-4 h-6 w-6 stroke-current text-primary"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-              />
-            </svg>
-            最多兩人同時在線
-          </li>
-          <li class="mt-6 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-4 h-6 w-6 stroke-current text-primary"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-              />
-            </svg>
-            每日最多下載50G
-          </li>
-        </ul>
-
-        <a href="#" class="mb-8 block w-full text-center font-bold"
-          >查看完整方案內容</a
-        >
-
+    <!-- modal -->
+    <div
+      id="modal"
+      class="pointer-events-none absolute left-0 right-0 top-0 flex h-full w-full items-start justify-center bg-black/70 opacity-0 duration-300"
+    >
+      <div class="mt-[150px] w-[90%] rounded-lg bg-white p-4">
+        <p>標題</p>
+        <p>內容</p>
         <button
-          class="w-full rounded-lg bg-primary py-3 text-lg tracking-wide text-white"
+          id="close"
+          class="mt-4 w-full rounded-lg bg-primary py-3 text-lg tracking-wide text-white"
         >
-          訂閱方案
+          關閉
         </button>
       </div>
     </div>
-  </div>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
